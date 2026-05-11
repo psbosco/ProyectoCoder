@@ -1,0 +1,321 @@
+<section id="wideo-api-landing" lang="en" aria-label="Wideo API Landing">
+  <style>
+    #wideo-api-landing {
+      --bg: #060915;
+      --bg-soft: #0c1225;
+      --surface: rgba(12, 18, 37, 0.74);
+      --surface-2: #121a33;
+      --line: rgba(148, 163, 184, 0.25);
+      --text: #e8edf8;
+      --muted: #a8b3ca;
+      --brand: #5b8cff;
+      --brand-2: #7f5bff;
+      --ok: #3dd68c;
+      --radius: 18px;
+      --shadow: 0 30px 90px -45px rgba(0, 0, 0, .75);
+      color: var(--text);
+      background: radial-gradient(900px 480px at 15% -20%, rgba(91, 140, 255, .26), transparent 60%), radial-gradient(800px 400px at 85% -20%, rgba(127, 91, 255, .22), transparent 65%), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, .15);
+      box-shadow: var(--shadow);
+    }
+    #wideo-api-landing *,#wideo-api-landing *::before,#wideo-api-landing *::after { box-sizing: border-box; }
+    #wideo-api-landing a { color: inherit; }
+
+    #wideo-api-landing .container { max-width: 1160px; margin: 0 auto; }
+
+    #wideo-api-landing .top-nav {
+      position: sticky; top: 8px; z-index: 30;
+      margin-bottom: 20px;
+      padding: 10px 14px;
+      background: rgba(7, 12, 24, .7);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    }
+    #wideo-api-landing .brand { font-weight: 800; letter-spacing: -.02em; font-size: 18px; }
+    #wideo-api-landing .brand span { color: #9fb8ff; font-weight: 600; }
+    #wideo-api-landing .top-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    #wideo-api-landing .top-links a { text-decoration: none; font-size: 13px; color: var(--muted); padding: 7px 10px; border-radius: 999px; border: 1px solid transparent; }
+    #wideo-api-landing .top-links a:hover { color: #fff; border-color: var(--line); background: rgba(148,163,184,.1); }
+
+    #wideo-api-landing .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    #wideo-api-landing .hero-main,
+    #wideo-api-landing .hero-side {
+      background: linear-gradient(180deg, rgba(20,30,58,.9), rgba(12,18,37,.85));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(18px, 2.6vw, 34px);
+    }
+    #wideo-api-landing .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #c8d5ff; border: 1px solid rgba(127,145,255,.4); background: rgba(91,140,255,.14); padding: 6px 10px; border-radius: 999px; margin-bottom: 14px; }
+    #wideo-api-landing h1 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 56px); line-height: 1.03; letter-spacing: -.03em; }
+    #wideo-api-landing .lead { margin: 0; font-size: clamp(18px, 1.65vw, 22px); line-height: 1.5; color: var(--muted); max-width: 62ch; }
+    #wideo-api-landing .cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 12px; }
+    #wideo-api-landing .btn { text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 12px; padding: 12px 15px; border: 1px solid transparent; }
+    #wideo-api-landing .btn.primary { color: #fff; background: linear-gradient(95deg, var(--brand), var(--brand-2)); box-shadow: 0 14px 30px -18px rgba(91,140,255,.75); }
+    #wideo-api-landing .btn.ghost { color: #d6def4; border-color: var(--line); background: rgba(148,163,184,.06); }
+
+    #wideo-api-landing .hero-side h3 { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: #c1cdef; }
+    #wideo-api-landing .flow-mini { display: grid; gap: 10px; }
+    #wideo-api-landing .flow-mini div { border: 1px solid var(--line); background: rgba(10,15,30,.65); border-radius: 12px; padding: 10px 12px; font-size: 14px; color: #d9e2fb; }
+    #wideo-api-landing .pill { display: inline-flex; margin-top: 10px; font-size: 12px; color: #9debc8; background: rgba(61,214,140,.15); border: 1px solid rgba(61,214,140,.35); padding: 6px 8px; border-radius: 999px; }
+
+    #wideo-api-landing .section { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(16px, 2vw, 26px); }
+    #wideo-api-landing .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    #wideo-api-landing h2 { margin: 0; font-size: clamp(24px, 3vw, 36px); line-height: 1.1; }
+    #wideo-api-landing .section-sub { margin: 0; color: var(--muted); font-size: 15px; }
+    #wideo-api-landing p { margin: 0 0 12px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+
+    #wideo-api-landing .flow-steps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 10px; }
+    #wideo-api-landing .step { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+    #wideo-api-landing .step b { display: block; font-size: 12px; color: #9fb8ff; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 7px; }
+    #wideo-api-landing .step p { margin: 0; font-size: 14px; color: #d6def4; line-height: 1.45; }
+
+    #wideo-api-landing .endpoint-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    #wideo-api-landing .endpoint { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    #wideo-api-landing .endpoint h3 { margin: 0 0 8px; font-size: 20px; }
+    #wideo-api-landing .method { display:inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 4px 8px; margin-bottom: 8px; }
+    #wideo-api-landing .post { background: rgba(91,140,255,.2); color: #cfe0ff; }
+    #wideo-api-landing .get { background: rgba(61,214,140,.2); color: #b9f3d7; }
+
+    #wideo-api-landing .code-card { border: 1px solid rgba(159,184,255,.28); border-radius: 12px; overflow: hidden; margin-top: 10px; }
+    #wideo-api-landing .code-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; font-size: 12px; background: #111931; color: #b6c4ea; border-bottom: 1px solid var(--line); }
+    #wideo-api-landing pre { margin: 0; padding: 12px; background: #090f21; overflow-x: auto; }
+    #wideo-api-landing code { color: #dfe7fd; font-size: 13px; line-height: 1.5; }
+
+    #wideo-api-landing .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+    #wideo-api-landing .feature { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    #wideo-api-landing .feature .kicker { display: inline-block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #9fb8ff; margin-bottom: 7px; }
+
+    #wideo-api-landing .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    #wideo-api-landing table { width: 100%; min-width: 640px; border-collapse: collapse; }
+    #wideo-api-landing th, #wideo-api-landing td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); }
+    #wideo-api-landing th { background: rgba(148,163,184,.08); color: #dbe5ff; font-size: 13px; }
+    #wideo-api-landing td { color: #ccd7f1; font-size: 14px; }
+
+    #wideo-api-landing .pricing { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+    #wideo-api-landing .price { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    #wideo-api-landing .price.featured { border-color: rgba(127,145,255,.45); box-shadow: inset 0 0 0 1px rgba(91,140,255,.25); }
+    #wideo-api-landing .price-name { margin: 0 0 6px; font-size: 20px; }
+    #wideo-api-landing .price-credits { margin: 0 0 8px; color: var(--muted); font-size: 14px; }
+    #wideo-api-landing .price-value { margin: 0; color: #f0f4ff; font-size: 30px; font-weight: 800; }
+
+    #wideo-api-landing .form-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12px; align-items: stretch; }
+    #wideo-api-landing .form-copy, #wideo-api-landing .form-card { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    #wideo-api-landing iframe { width: 100%; min-height: 680px; border: 0; border-radius: 10px; background: #fff; }
+
+    #wideo-api-landing footer { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); color: #93a2c7; font-size: 13px; }
+    #wideo-api-landing footer a { color: #b8c9ff; }
+
+    @media (max-width: 1024px) {
+      #wideo-api-landing .hero,
+      #wideo-api-landing .endpoint-grid,
+      #wideo-api-landing .feature-grid,
+      #wideo-api-landing .form-wrap { grid-template-columns: 1fr; }
+      #wideo-api-landing .flow-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      #wideo-api-landing .pricing { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 700px) {
+      #wideo-api-landing { padding: 12px; border-radius: 16px; }
+      #wideo-api-landing .top-nav { position: static; }
+      #wideo-api-landing .top-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; }
+      #wideo-api-landing .top-links a { text-align: center; }
+      #wideo-api-landing .flow-steps { grid-template-columns: 1fr; }
+      #wideo-api-landing .pricing { grid-template-columns: 1fr; }
+      #wideo-api-landing p { font-size: 16px; }
+      #wideo-api-landing iframe { min-height: 560px; }
+    }
+  </style>
+
+  <div class="container">
+    <nav class="top-nav" aria-label="Primary navigation">
+      <div class="brand">Wideo <span>API</span></div>
+      <div class="top-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#security">Security</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#api-key-form">Request API key</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-main">
+        <span class="badge">Video Automation API</span>
+        <h1>Render personalized videos at scale</h1>
+        <p class="lead">Wideo Automation API lets you render thousands of personalized videos programmatically. Perfect for dynamic creative, branded video personalization, high-volume ad production, and white-label solutions. The API follows an asynchronous batch model — submit a batch, get a <code>batchId</code>, and receive results via webhook.</p>
+        <div class="cta">
+          <a class="btn primary" href="#api-key-form">Request API key</a>
+          <a class="btn ghost" href="#enqueue-batch">View endpoint</a>
+        </div>
+      </div>
+      <aside class="hero-side" aria-label="API workflow summary">
+        <h3>Async workflow</h3>
+        <div class="flow-mini">
+          <div><strong>1.</strong> <code>POST /batch</code> with <code>templateId</code> + metadata</div>
+          <div><strong>2.</strong> Receive <code>batchId</code> instantly</div>
+          <div><strong>3.</strong> Rendering runs asynchronously</div>
+          <div><strong>4.</strong> Webhook posts final result</div>
+        </div>
+        <span class="pill">Status: async batch processing</span>
+      </aside>
+    </header>
+
+    <section class="section" id="how-it-works">
+      <div class="section-head"><h2>How It Works</h2><p class="section-sub">Asynchronous processing designed for compute-heavy rendering.</p></div>
+      <p>The API uses an asynchronous batch processing model because video rendering is compute-heavy. You send a list of videos, we return a batchId immediately, and we notify your webhook when processing finishes.</p>
+      <div class="flow-steps">
+        <article class="step"><b>Step 1</b><p><strong>POST /batch</strong> – enqueue a rendering job.</p></article>
+        <article class="step"><b>Step 2</b><p><strong>batchId</strong> – unique identifier for the batch.</p></article>
+        <article class="step"><b>Step 3</b><p><strong>Webhook</strong> – receives final result (success or failure).</p></article>
+        <article class="step"><b>Step 4</b><p><strong>GET /batch/{batchId}</strong> – manual status check.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="endpoints">
+      <div class="section-head"><h2>Core Endpoints</h2><p class="section-sub">Structured cards with request/response examples.</p></div>
+      <div class="endpoint-grid">
+        <article class="endpoint" id="authentication">
+          <span class="method post">Headers</span>
+          <h3>Authentication</h3>
+          <p>All API requests must include your API key in the request header. Obtain your key from the Wideo dashboard or by using the form below.</p>
+          <div class="code-card"><div class="code-head"><span>Request header</span><span>x-api-key</span></div><pre><code>{
+  "headers": {
+    "x-api-key": "12345678-1234-1234-1234-123456789012"
+  }
+}</code></pre></div>
+          <p>Each API key maps to a specific user account. Write operations are restricted to subfolders of your user folder inside the Wideo result bucket.</p>
+        </article>
+
+        <article class="endpoint" id="enqueue-batch">
+          <span class="method post">POST /batch</span>
+          <h3>Enqueue an Automation Batch</h3>
+          <p><code>POST /batch</code> – submits a rendering job.</p>
+          <div class="code-card"><div class="code-head"><span>Request body</span><span>JSON</span></div><pre><code>{
+  "templateId": "abcdefgh1234567890",
+  "webhook": "https://your-server.com/webhook",
+  "videos": [
+    {
+      "title": "Tech Company - Keep Your Business Connected",
+      "logo": "https://resources.wideo.co/demo/tech-logo.jpg",
+      "companyname": "Tech Company Inc."
+    }
+  ]
+}</code></pre></div>
+          <div class="code-card"><div class="code-head"><span>Immediate Response</span><span>201 Created</span></div><pre><code>{ "batchId": 1234567890 }</code></pre></div>
+        </article>
+
+        <article class="endpoint" id="get-batch">
+          <span class="method get">GET /batch/{batchId}</span>
+          <h3>Get Batch Status</h3>
+          <div class="code-card"><div class="code-head"><span>Response</span><span>SUCCEEDED</span></div><pre><code>{
+  "batchId": 1234567890,
+  "status": "SUCCEEDED",
+  "videos": [
+    {
+      "videoUrl": "https://s3.../video.mp4?presigned...",
+      "previewUrl": "https://s3.../preview.png?presigned..."
+    }
+  ]
+}</code></pre></div>
+          <p>Status values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>RUNNING</code>, <code>TIMED_OUT</code>, <code>ABORTED</code>.</p>
+        </article>
+
+        <article class="endpoint" id="webhook">
+          <span class="method post">Webhook</span>
+          <h3>Asynchronous Webhook</h3>
+          <p>When processing finishes, Wideo will POST to your provided webhook URL.</p>
+          <div class="code-card"><div class="code-head"><span>Success payload</span><span>POST</span></div><pre><code>{
+  "batchId": 1234567890,
+  "status": "SUCCEEDED",
+  "videos": [...]
+}</code></pre></div>
+          <div class="code-card"><div class="code-head"><span>Failure payload</span><span>POST</span></div><pre><code>{
+  "batchId": 1234567890,
+  "success": "FAILED",
+  "error": "Error while rendering videos, contact support"
+}</code></pre></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="error-handling">
+      <div class="section-head"><h2>Error Handling</h2><p class="section-sub">Common HTTP responses returned by the API.</p></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Code</th><th>Error</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>400</td><td>Bad Request</td><td>Missing templateId or invalid payload</td></tr>
+            <tr><td>401</td><td>Unauthorized</td><td>API Key missing or incorrect</td></tr>
+            <tr><td>403</td><td>Forbidden</td><td>Client not authorized (e.g. webhook not preconfigured)</td></tr>
+            <tr><td>429</td><td>Too Many Requests</td><td>Global rate limit exceeded</td></tr>
+            <tr><td>500</td><td>Internal Error</td><td>Unexpected system error. Contact support.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="security">
+      <div class="section-head"><h2>Security & Data</h2><p class="section-sub">Operational essentials for production integration.</p></div>
+      <div class="feature-grid">
+        <article class="feature" id="data-lifecycle"><span class="kicker">Data lifecycle</span><p>Generated MP4 and PNG files are stored for <strong>72 hours</strong> for troubleshooting. Presigned URLs remain accessible for <strong>24 hours</strong>.</p></article>
+        <article class="feature" id="encryption"><span class="kicker">Encryption</span><p>All API traffic is encrypted with TLS (HTTPS). Rendered files are stored in AWS S3 with <strong>AES-256 encryption at rest</strong>.</p></article>
+        <article class="feature"><span class="kicker">Rate &amp; concurrency limits</span><p><strong>Rate &amp; Concurrency Limits:</strong> Global limits protect our rendering infrastructure. Limits apply to all customers to ensure platform stability.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="section-head"><h2>Pricing – Monthly Credits</h2><p class="section-sub">Pick a plan based on rendering volume.</p></div>
+      <div class="pricing">
+        <article class="price"><h3 class="price-name">Basic</h3><p class="price-credits">500 credits / month</p><p class="price-value">$299 <small>/mo</small></p></article>
+        <article class="price featured"><h3 class="price-name">Pro</h3><p class="price-credits">1,000 credits / month</p><p class="price-value">$560 <small>/mo</small></p></article>
+        <article class="price"><h3 class="price-name">Pro+</h3><p class="price-credits">2,000 credits / month</p><p class="price-value">$1,064 <small>/mo</small></p></article>
+        <article class="price"><h3 class="price-name">Enterprise</h3><p class="price-credits">Custom credits</p><p class="price-value">Contact Sales</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="api-key-form">
+      <div class="section-head"><h2>Request an API Key</h2><p class="section-sub">Ready to test the Wideo Automation API?</p></div>
+      <div class="form-wrap">
+        <div class="form-copy">
+          <p>Request a sandbox API key using the form below. Our team will review your request within <strong>2 business days</strong>.</p>
+          <p>Include your use case, expected monthly volume, and integration requirements so we can speed up onboarding.</p>
+        </div>
+        <div class="form-card"><iframe id="inline-k8TWU2hzrH6ImaGz0W0p" data-base-src="https://api.leadconnectorhq.com/widget/form/k8TWU2hzrH6ImaGz0W0p" data-form-name="Automation Form" data-height="647" data-form-id="k8TWU2hzrH6ImaGz0W0p" title="Automation Form" loading="lazy"></iframe></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Wideo. <a href="https://wideo.co" target="_blank" rel="noopener noreferrer">wideo.co</a> | <a href="https://wideo.co/video-automation" target="_blank" rel="noopener noreferrer">Video Automation</a> | <a href="https://wideo.co/personalized-video/" target="_blank" rel="noopener noreferrer">Personalized Video</a> | <a href="https://wideo.co/white-label-video/" target="_blank" rel="noopener noreferrer">White Label Video</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function waitForIframe() {
+      var iframe = document.getElementById('inline-k8TWU2hzrH6ImaGz0W0p');
+      if (!iframe) return setTimeout(waitForIframe, 50);
+      var pageTag = window.location.href;
+      var base = iframe.getAttribute('data-base-src');
+      var url = new URL(base);
+      url.searchParams.set('referral_url', pageTag);
+      url.searchParams.set('_t', Date.now());
+      iframe.src = url.toString();
+      new MutationObserver(function () {
+        if (iframe.src.indexOf('referral_url=') === -1) {
+          var u = new URL(iframe.src);
+          u.searchParams.set('referral_url', pageTag);
+          iframe.src = u.toString();
+        }
+      }).observe(iframe, { attributes: true });
+    })();
+  </script>
+  <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+</section>
